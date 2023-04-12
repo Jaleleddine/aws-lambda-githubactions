@@ -15,9 +15,9 @@ jobs:
       - name: default deploy
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           #aws_region: ${{ secrets.AWS_REGION }}
-          aws_region: eu-west-3
-          function_name: CopyFileToCurratedDataSetCompagnie
+          aws-region: eu-west-3
+          function-name: CopyFileToCurratedDataSetCompagnie
           source: CopyFileToCurratedDataSetCompagnie/lambda_function.py 
