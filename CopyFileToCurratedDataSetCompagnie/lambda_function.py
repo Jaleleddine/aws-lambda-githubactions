@@ -12,6 +12,7 @@ This Lambda function performs the following actions:
       eu-totalenergies-datalake-9443-0190-4016-error/application/YYYY/MM/DD/file.csv
       
 
+      
 Author : KASSI Amine
 Date V1 : 23/03/2023
 Date V2 : 24/03/2023
