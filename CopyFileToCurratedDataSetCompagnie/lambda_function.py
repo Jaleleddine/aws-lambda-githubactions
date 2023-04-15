@@ -7,7 +7,7 @@ This Lambda function performs the following actions:
     "xxx-datalake-9443-0190-4016-curated" with the following folder 
     structure: "eu-totalenergies-datalake-9443-0190-4016-curated/application/YYYY/MM/DD/file.csv"
       
-    * Otherwise, the file is transferred to the "eu-totalenergies-datalake-9443-0190-4016-error" 
+    * Otherwise, the file is transferred to the "xxx-datalake-9443-0190-4016-error" 
     bucket with the following folder structure: 
       
 
