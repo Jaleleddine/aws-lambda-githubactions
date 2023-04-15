@@ -1,41 +1,42 @@
-"""
-Decription :
+import json
 
-This Lambda function performs the following actions:
-    * If the file is valid, meaning that it is in CSV format, non-empty, and has a line separator 
-    of (";" or "\t") the file is transferred to the S3 bucket after converting it to UTF-8
-    "xxx-datalake-9443-0190-4016-curated" with the following folder 
-    structure: "eu-totalenergies-datalake-9443-0190-4016-curated/application/YYYY/MM/DD/file.csv"
-      
-    * Otherwise, the file is transferred to the "xxx-datalake-9443-0190-4016-error" 
-    bucket with the following folder structure: 
-      
+# import requests
 
-
-Date V1 : 23/03/2023
-Date V2 : 24/03/2023
-"""
-import datetime
-
-#import time
-import codecs
-#import botocore
-import boto3
-
-
-
-today = datetime.date.today()
 
 def lambda_handler(event, context):
-    """
-    AWS Lambda function handler.
+    """Sample pure Lambda function
 
-    :param event: A dictionary containing event data.
-    :type event: dict
-    :param context: An object containing information about the current execution context.
-    :return: A dictionary containing the Lambda function's response.
+    Parameters
+    ----------
+    event: dict, required
+        API Gateway Lambda Proxy Input Format
+
+        Event doc: https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html#api-gateway-simple-proxy-for-lambda-input-format
+
+    context: object, required
+        Lambda Context runtime methods and attributes
+
+        Context doc: https://docs.aws.amazon.com/lambda/latest/dg/python-context-object.html
+
+    Returns
+    ------
+    API Gateway Lambda Proxy Output Format: dict
+
+        Return doc: https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html
     """
 
-    print(event)
+    # try:
+    #     ip = requests.get("http://checkip.amazonaws.com/")
+    # except requests.RequestException as e:
+    #     # Send some context about this error to Lambda Logs
+    #     print(e)
+
+    #     raise e
     print("Hello World")
-    
+    return {
+        "statusCode": 200,
+        "body": json.dumps({
+            "message": "hello world",
+            # "location": ip.text.replace("\n", "")
+        }),
+    }
